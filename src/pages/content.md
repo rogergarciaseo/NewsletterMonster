@@ -1,9 +1,8 @@
 ---
-    layout: '../layouts/Layout.astro'
-    title: 'Contenido'
-
+title: 'Content'
+layout: '../layouts/Layout.astro'
 ---
 
-# Titulo
+<h1>Titulo</h1>
 
-contenido
+content
