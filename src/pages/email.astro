@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '@fontsource-variable/inter-tight';
+---
+
+<Layout title='email'>
+oooh
+
+  <iframe width="100%" src="archives/4_ways_to_connect_with_nature.html" id="mail"></iframe>
+  <script>
+    var iframe = document.getElementById("mail");
+    iframe.onload = function () {
+      iframe.style.height = iframe.contentWindow.document.body.clientHeight + 1 + 'px';
+    }
+  </script>
+</Layout>
