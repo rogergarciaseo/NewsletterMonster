@@ -1,5 +1,6 @@
 --- 
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import '@fontsource-variable/inter-tight';
 
 interface Props {
@@ -21,9 +22,10 @@ const { title } = Astro.props;
 	</head>
 	<body class="max-w-6xl mx-auto">
 		<Header />
-		<main class="relative max-w-6xl flex text-justify">
+		<main class="relative full text-justify">
 			<slot />
 		</main>
+		<Footer />
 	</body>
 </html>
 
