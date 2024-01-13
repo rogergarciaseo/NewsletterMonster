@@ -2,15 +2,29 @@
 import CategoryButton from '../components/CategoryButton.astro';
 import Layout from '../layouts/Layout.astro';
 import '@fontsource-variable/inter-tight';
+{ Astro.props }
 ---
 
 <Layout title='email'>
   <div class="w-full">
-    <h1 class="pt-10 text-5xl leading-normal font-bold">🎢  Startups’ wild ride ahead</h1>
-    <p class="pt-5 text-xl leading-normal"><b>Sent on:</b> 2024-01-05 06:02:06</p>
+    <h1 class="pt-10 text-5xl leading-normal font-bold">🏯 Explore Japan's laid-back side</h1>
+    <p class="pt-5 text-xl leading-normal"><b>Sent on:</b> 2024-01-02 06:02:06 UTC</p>
     <CategoryButton>Button<CategoryButton />
   </div>
-  <iframe width="100%" src="archives/4_ways_to_connect_with_nature.html" id="mail"></iframe>
+  <div class="bg-white rounded-lg shadow-md mt-10 p-4 animate-pulse">
+    <div class="w-2/3 h-10 bg-gray-300 rounded mb-8"></div>
+    <div class="w-full h-8 bg-gray-300 rounded mb-2"></div>
+    <div class="w-full h-8 bg-gray-300 rounded mb-2"></div>
+    <div class="w-2/2 h-8 bg-gray-300 rounded mb-2"></div>
+    <div class="w-3/5 h-8 bg-gray-300 rounded mb-2"></div>
+    <div class="w-2/3 h-8 bg-gray-300 rounded mb-2"></div>
+    <div class="w-full h-8 bg-gray-300 rounded mb-2"></div>
+    <div class="w-2/3 h-8 bg-gray-300 rounded mb-2"></div>
+    <div class="w-1/2 h-8 bg-gray-300 rounded mb-2"></div>
+    <div class="w-full h-8 bg-gray-300 rounded mb-2"></div>
+    <div class="w-1/2 h-8 bg-gray-300 rounded mb-2"></div>
+  </div>
+  <iframe width="100%" src="archives/Finding_cheap_flights_just_got_easier.html" id="mail"></iframe>
   <script>
     var iframe = document.getElementById("mail");
     iframe.onload = function () {
