@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import "@fontsource-variable/inter-tight";
 import LogoCloud from "../components/LogoCloud.astro";
+import CatCard from "../components/CatCard.astro";
 ---
 
 <Layout title="NewsletterMonster.com">
@@ -19,11 +20,22 @@ import LogoCloud from "../components/LogoCloud.astro";
             overall beauty. A treasure cove of captivating art, vivid pictures,
             and timeless beauty.
           </p>
+          <!-- Base -->
+
           <a
+            class="group relative inline-block focus:outline-none focus:ring"
             href="#"
-            class="bg-white text-black rounded-full px-6 py-2 hover:bg-[#ccc] hover:text-black transition duration-600"
-            >Browse Categories</a
           >
+            <span
+              class="text-1xl absolute inset-0 translate-x-1.5 translate-y-1.5 bg-yellow-300 transition-transform group-hover:translate-x-0 rounded-lg group-hover:translate-y-0"
+            ></span>
+
+            <span
+              class="relative inline-block border-2 border-current rounded-lg px-8 py-3 text-1xl font-bold uppercase tracking-widest text-black group-active:text-opacity-75"
+            >
+              Browse Categories!
+            </span>
+          </a>
         </div>
       </div>
 
@@ -86,4 +98,9 @@ import LogoCloud from "../components/LogoCloud.astro";
   </div>
   <div class="flex"></div>
   <LogoCloud />
+  <div class="flex-1 flex items-center mb-6 gap-3">
+    <CatCard />
+    <CatCard />
+    <CatCard />
+  </div>
 </Layout>
