@@ -1,34 +1,79 @@
 ---
-import CategoryButton from '../components/CategoryButton.astro';
-import Layout from '../layouts/Layout.astro';
-import '@fontsource-variable/inter-tight';
-{ Astro.props }
+import BreadCrumbs from "../components/BreadCrumbs.astro";
+import CategoryButton from "../components/CategoryButton.astro";
+import LayoutMain from "../layouts/LayoutMain.astro";
+import "@fontsource-variable/inter-tight";
+
+{
+  Astro.props;
+}
 ---
 
-<Layout title='email'>
+<LayoutMain title="email">
   <div class="w-full">
-    <h1 class="pt-10 text-5xl leading-normal font-bold">🏯 Explore Japan's laid-back side</h1>
-    <p class="pt-5 text-xl leading-normal"><b>Sent on:</b> 2024-01-02 06:02:06 UTC</p>
-    <CategoryButton>Button<CategoryButton />
+    <BreadCrumbs />
+    <h1 class="pt-10 text-5xl leading-normal font-bold">
+      🏯 Explore Japan's laid-back side
+    </h1>
+    <p class="pt-5 text-xl leading-normal">
+      <b>Sent on:</b> 2024-01-02 06:02:06 UTC
+    </p>
+    <CategoryButton>Button</CategoryButton>
+    <div
+      class="bg-white rounded-lg shadow-md mt-10 p-4 animate-pulse"
+      id="skeletonLoading"
+    >
+      <div class="w-2/3 h-10 bg-gray-300 rounded mb-8"></div>
+      <div class="w-full h-8 bg-gray-300 rounded mb-2"></div>
+      <div class="w-full h-8 bg-gray-300 rounded mb-2"></div>
+      <div class="w-2/2 h-8 bg-gray-300 rounded mb-2"></div>
+      <div class="w-3/5 h-8 bg-gray-300 rounded mb-2"></div>
+      <div class="w-2/3 h-8 bg-gray-300 rounded mb-2"></div>
+      <div class="w-full h-8 bg-gray-300 rounded mb-2"></div>
+      <div class="w-2/3 h-8 bg-gray-300 rounded mb-2"></div>
+      <div class="w-1/2 h-8 bg-gray-300 rounded mb-2"></div>
+      <div class="w-full h-8 bg-gray-300 rounded mb-2"></div>
+      <div class="w-1/2 h-8 bg-gray-300 rounded mb-2"></div>
+    </div>
+    <!-- Actual Content -->
+    <div id="actualContent">
+      <iframe
+        width="900px"
+        src="archives/Finding_cheap_flights_just_got_easier.html"
+        id="mail"
+        onload="resizeIframe()"></iframe>
+    </div>
+
+    <script>
+      function resizeIframe() {
+        var iframe = document.getElementById("mail") as HTMLIFrameElement;
+        if (iframe && iframe.contentWindow) {
+          iframe.style.height =
+            iframe.contentWindow.document.body.clientHeight + 1 + "px";
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var iframe = document.getElementById("mail") as HTMLIFrameElement;
+
+        if (iframe && iframe.contentWindow) {
+          iframe.onload = function () {
+            resizeIframe();
+
+            // Hide skeleton loading
+            var skeletonLoading = document.getElementById("skeletonLoading");
+            if (skeletonLoading) {
+              skeletonLoading.style.display = "none";
+            }
+
+            // Show actual content
+            var actualContent = document.getElementById("actualContent");
+            if (actualContent) {
+              actualContent.style.display = "inline-block";
+            }
+          };
+        }
+      });
+    </script>
   </div>
-  <div class="bg-white rounded-lg shadow-md mt-10 p-4 animate-pulse">
-    <div class="w-2/3 h-10 bg-gray-300 rounded mb-8"></div>
-    <div class="w-full h-8 bg-gray-300 rounded mb-2"></div>
-    <div class="w-full h-8 bg-gray-300 rounded mb-2"></div>
-    <div class="w-2/2 h-8 bg-gray-300 rounded mb-2"></div>
-    <div class="w-3/5 h-8 bg-gray-300 rounded mb-2"></div>
-    <div class="w-2/3 h-8 bg-gray-300 rounded mb-2"></div>
-    <div class="w-full h-8 bg-gray-300 rounded mb-2"></div>
-    <div class="w-2/3 h-8 bg-gray-300 rounded mb-2"></div>
-    <div class="w-1/2 h-8 bg-gray-300 rounded mb-2"></div>
-    <div class="w-full h-8 bg-gray-300 rounded mb-2"></div>
-    <div class="w-1/2 h-8 bg-gray-300 rounded mb-2"></div>
-  </div>
-  <iframe width="100%" src="archives/Finding_cheap_flights_just_got_easier.html" id="mail"></iframe>
-  <script>
-    var iframe = document.getElementById("mail");
-    iframe.onload = function () {
-      iframe.style.height = iframe.contentWindow.document.body.clientHeight + 1 + 'px';
-    }
-  </script>
-</Layout>
+</LayoutMain>
