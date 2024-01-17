@@ -36,9 +36,10 @@ import "@fontsource-variable/inter-tight";
       <div class="w-1/2 h-8 bg-gray-300 rounded mb-2"></div>
     </div>
     <!-- Actual Content -->
-    <div id="actualContent">
+    <div id="actualContent" ">
       <iframe
         width="900px"
+        border-radius="15px"
         src="archives/Finding_cheap_flights_just_got_easier.html"
         id="mail"
         onload="resizeIframe()"></iframe>
@@ -69,7 +70,7 @@ import "@fontsource-variable/inter-tight";
             // Show actual content
             var actualContent = document.getElementById("actualContent");
             if (actualContent) {
-              actualContent.style.display = "inline-block";
+              actualContent.style.display = "inline-block, rounded-xl";
             }
           };
         }

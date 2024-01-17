@@ -1,7 +1,6 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import BreadCrumbs from "../components/BreadCrumbs.astro";
 import "@fontsource-variable/inter-tight";
 
 interface Props {
@@ -12,16 +11,27 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
     <title>{title}</title>
   </head>
-  <body class="max-w-6xl mx-auto">
+  <body class="max-w-6xl mx-auto dark:bg-[#20252c]">
     <Header />
     <main class="relative full text-justify">
       <slot />
@@ -33,9 +43,10 @@ const { title } = Astro.props;
 <style is="global">
   html {
     font-family: "Inter Tight Variable", system-ui, sans-serif;
-    background: #fff;
     background-size: 224px;
+    color-scheme: dark light;
   }
+
   code {
     font-family:
       Menlo,
