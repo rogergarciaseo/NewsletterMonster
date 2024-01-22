@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "@fontsource-variable/inter-tight";
+import LogoCloud from "../components/LogoCloud.astro";
+import CatCard from "../components/CatCard.astro";
+import Contact1 from "../components/Contact1.astro";
+---
+
+<Layout title="404 page - NewsletterMonster.com">
+  <div class="flex items-center justify-center px-10">
+    <a href="/">
+      <img class="w-auto max-w-full dark:hidden" src="./404.png" alt="" />
+      <img
+        class="w-auto max-w-full hidden dark:block"
+        src="./404-dark.png"
+        alt="Dark Logo"
+      />
+    </a>
+  </div>
+  <LogoCloud />
+  <Contact1 />
+</Layout>
