@@ -7,18 +7,16 @@ import Contact1 from "../components/Contact1.astro";
 ---
 
 <Layout title="NewsletterMonster.com">
-  <div>
-    <div class="flex h-screen dark">
+  <section>
+    <div class="flex flex-col sm:flex-row h-screen dark">
       <div
         class="flex-1 flex items-center ver bg-[#fc0434] bg-fixed text-white p-10 rounded-xl"
       >
-        <div>
-          <p class="text-7xl font-bold mb-4 leading-none">
+        <div h-full>
+          <p class="text-7xl sm:text-7xl font-bold mb-4 leading-none">
             Cellebrating Newsletters!
           </p>
-          <p
-            class="justify-start text-3xl font-thin mb-8 tracking-tight leading-7 text-balance"
-          >
+          <p class="text-left text-3xl font-thin mb-8 tracking-tight leading-7">
             This is a web archive of newsletters, their art, pictures, and
             overall beauty. A treasure cove of captivating art, vivid pictures,
             and timeless beauty.
@@ -42,7 +40,7 @@ import Contact1 from "../components/Contact1.astro";
       </div>
 
       <!-- Right Half - Image Loop -->
-      <div class="flex-1 flex-col rounded-xl">
+      <div class="flex-1 sm:flex-row rounded-xl">
         <div class="h-full">
           <!-- Images loop using a simple JavaScript script -->
           <div id="imageLoop" class="h-full rounded-xl"></div>
@@ -97,7 +95,7 @@ import Contact1 from "../components/Contact1.astro";
         console.error("Element with ID 'imageLoop' not found.");
       }
     </script>
-  </div>
+  </section>
   <LogoCloud />
   <div class="flex-1 flex items-center mb-6 gap-3 rounded-xl">
     <CatCard />
