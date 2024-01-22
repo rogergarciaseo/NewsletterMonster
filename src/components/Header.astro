@@ -20,9 +20,14 @@ import MainMenu from "../components/MainMenu.astro";
         <div class="flex items-center">
           <a href="/">
             <img
-              class="w-auto h-12 sm:h-12 max-w-full"
+              class="w-auto h-12 sm:h-12 max-w-full dark:hidden"
               src="/public/images/logoheader.png"
               alt=""
+            />
+            <img
+              class="w-auto h-12 sm:h-12 max-w-full hidden dark:block"
+              src="/public/images/logoheader-dark.png"
+              alt="Dark Logo"
             />
           </a>
 
