@@ -1,0 +1,102 @@
+---
+{
+  Astro.props;
+}
+---
+
+<section>
+  <div class="bg-[#fc0434] text-center dark:bg lg:text-left">
+    <div
+      class="w-100 mx-auto sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl"
+    >
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <div class="px-3 mt-4 pl-4 h-[60vh] md:[50vh] sm:h-[60vh]">
+          <p
+            class="text-left text-6xl sm:text-7xl md:text-7xl lg:text-6xl xl:text-7xl font-bold mb-4 leading-none"
+          >
+            Cellebrating Newsletters!
+          </p>
+          <p class="text-left text-3xl font-thin mb-0 tracking-tight leading-7">
+            Behold, an online vault stuffed with newsletters – a chaotic blend
+            of their quirky art, mesmerizing visuals, and a wild kaleidoscope of
+            unfiltered beauty.
+          </p>
+          <p class="text-left text-3xl font-thin mb-8 tracking-tight leading-7">
+            Dive into this treasure trove filled with spellbinding creativity,
+            vibrant images, and everlasting allure.
+          </p>
+
+          <!-- Call to Action -->
+          <div class="mb-10">
+            <a
+              class="group relative inline-block focus:outline-none focus:ring"
+              href="#"
+            >
+              <span
+                class="text-1xl absolute inset-0 translate-x-1.5 translate-y-1.5 bg-yellow-300 transition-transform group-hover:translate-x-0 rounded-lg group-hover:translate-y-0"
+              ></span>
+
+              <span
+                class="relative inline-block border-2 border-current rounded-lg px-8 py-3 text-1xl font-bold uppercase tracking-widest text-black group-active:text-opacity-75"
+              >
+                Browse Categories!
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Half - Image Loop -->
+        <div class="mb-12 lg:mb-0 h-screen sm:h-[80vh]">
+          <div id="imageLoop" class="h-full"></div>
+          <script>
+            const imageLoop = document.getElementById("imageLoop");
+
+            if (imageLoop) {
+              const imageFolder = "/images/emailing/";
+
+              const imageFiles = [
+                "image1.webp",
+                "image2.webp",
+                "image3.webp",
+                "image4.webp",
+                "image5.webp",
+                "image6.webp",
+                "image7.webp",
+                "image8.webp",
+                "image9.webp",
+                // Add more image file names as needed
+              ];
+
+              let currentIndex = 0;
+
+              function changeImage() {
+                const imagePath = `.${imageFolder}${imageFiles[currentIndex]}`;
+                console.log("Current Image Path:", imagePath);
+
+                // Set the background image
+                if (imageLoop) {
+                  imageLoop.style.backgroundImage = `url('${imagePath.replace(
+                    / /g,
+                    "%20"
+                  )}')`;
+                  imageLoop.style.backgroundPosition = "center";
+                  imageLoop.style.backgroundSize = "cover";
+                }
+
+                currentIndex = (currentIndex + 1) % imageFiles.length;
+              }
+
+              // Change image every 3 seconds (adjust as needed)
+              setInterval(changeImage, 300);
+
+              // Initial image
+              changeImage();
+            } else {
+              console.error("Element with ID 'imageLoop' not found.");
+            }
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
