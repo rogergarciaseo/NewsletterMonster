@@ -1,8 +1,8 @@
 ---
 import BreadCrumbs from "../components/BreadCrumbs.astro";
 import CategoryButton from "../components/CategoryButton.astro";
-import LayoutMain from "../layouts/LayoutMain.astro";
 import "@fontsource-variable/inter-tight";
+import LayoutMain from "../layouts/LayoutMain.astro";
 
 {
   Astro.props;
@@ -20,26 +20,25 @@ import "@fontsource-variable/inter-tight";
     </p>
     <CategoryButton>Button</CategoryButton>
     <div
-      class="bg-white rounded-lg shadow-md mt-10 p-4 animate-pulse"
+      class="bg-white dark:bg-inherit rounded-lg shadow-md mt-10 w-3/4 p-4 animate-pulse"
       id="skeletonLoading"
     >
-      <div class="w-2/3 h-10 bg-gray-300 rounded mb-8"></div>
-      <div class="w-full h-8 bg-gray-300 rounded mb-2"></div>
-      <div class="w-full h-8 bg-gray-300 rounded mb-2"></div>
-      <div class="w-2/2 h-8 bg-gray-300 rounded mb-2"></div>
-      <div class="w-3/5 h-8 bg-gray-300 rounded mb-2"></div>
-      <div class="w-2/3 h-8 bg-gray-300 rounded mb-2"></div>
-      <div class="w-full h-8 bg-gray-300 rounded mb-2"></div>
-      <div class="w-2/3 h-8 bg-gray-300 rounded mb-2"></div>
-      <div class="w-1/2 h-8 bg-gray-300 rounded mb-2"></div>
-      <div class="w-full h-8 bg-gray-300 rounded mb-2"></div>
-      <div class="w-1/2 h-8 bg-gray-300 rounded mb-2"></div>
+      <div class="w-2/3 h-10 bg-gray-500 rounded mb-8"></div>
+      <div class="w-full h-8 bg-gray-500 rounded mb-2"></div>
+      <div class="w-full h-8 bg-gray-500 rounded mb-2"></div>
+      <div class="w-2/2 h-8 bg-gray-500 rounded mb-2"></div>
+      <div class="w-3/5 h-8 bg-gray-500 rounded mb-2"></div>
+      <div class="w-2/3 h-8 bg-gray-500 rounded mb-2"></div>
+      <div class="w-full h-8 bg-gray-500 rounded mb-2"></div>
+      <div class="w-2/3 h-8 bg-gray-500 rounded mb-2"></div>
+      <div class="w-1/2 h-8 bg-gray-500 rounded mb-2"></div>
+      <div class="w-full h-8 bg-gray-500 rounded mb-2"></div>
+      <div class="w-1/2 h-8 bg-gray-500 rounded mb-2"></div>
     </div>
     <!-- Actual Content -->
     <div id="actualContent" class="flex-1">
       <iframe
-        width="900px"
-        border-radius="15px"
+        width="100%"
         src="archives/Finding_cheap_flights_just_got_easier.html"
         id="mail"
         onload="resizeIframe()"></iframe>
