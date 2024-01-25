@@ -13,17 +13,27 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <Index />
-
+    <script>
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
     <title>{title}</title>
   </head>
-  <body class="max-w-6xl mx-auto">
+  <body class="max-w-6xl mx-auto dark:bg-[#202426]">
     <Header />
     <section class="w-full max-w-6xl mx-auto flex">
       <div class="flex-1">
@@ -35,12 +45,13 @@ const { title } = Astro.props;
     </section>
 
     <Footer />
-    <style is="global">
+    <style is:global>
       html {
         font-family: "Inter Tight Variable", system-ui, sans-serif;
         background-size: 224px;
         color-scheme: dark light;
       }
+
       code {
         font-family:
           Menlo,
@@ -54,8 +65,18 @@ const { title } = Astro.props;
       }
 
       h1 {
-        font-size: 5rem;
+        font-size: 6rem;
         font-weight: 800;
+        text-wrap: balance;
+        text-align: left;
+        line-height: 1em;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 1rem;
+        padding-top: 10px;
+        padding-bottom: 20px;
       }
     </style>
   </body>
